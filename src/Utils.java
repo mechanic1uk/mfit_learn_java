@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Utils {
 
     public static double faction (double x){
@@ -51,19 +53,16 @@ public class Utils {
     }
 
     public static String makeDecision(int x, int y) {
-        if (x == y) {
-            return "" + x + "=" + y;
-        } else {
-            return x > y ? "" + x + ">" + y : "" + x + "<" + y;
-        }
+        if (x == y) return  x + " = " + y;
+        if (x > y) return x + " > " + y;
+
+        return x +" < " + y;
     }
 
-    public static int max3(int x, int y, int z) {
-        if (x > y && x > z) {
-            return x;
-        } else {
-            return x < y && y > z ? y : z;
-        }
+    public static int max3 (int x, int y, int z) {
+        if (x > y && x > z) return x;
+        if (y > x && y > z) return y;
+        return z;
     }
 
     public static boolean sum3(int x, int y, int z) {
@@ -75,11 +74,8 @@ public class Utils {
     }
 
     public static boolean is35(int x) {
-        if (0 == x % 3 & 0 == x % 5) {
-            return false;
-        } else {
-            return 0 == x % 3 || 0 == x % 5;
-        }
+        if (0 == x % 3 & 0 == x % 5) return false;
+        return 0 == x % 3 || 0 == x % 5;
     }
 
     public static boolean magic6(int x, int y) {
@@ -176,9 +172,18 @@ public class Utils {
             x=x/10;
         } return z;
     }
-    public static int equalNum(int x)
+    public static boolean equalNum(int x)
     {
-        return x/10;
+        if (x/10 == 0) return true;
+        int equal = x%10;
+        boolean result;
+        for (; x/10 !=0; x = x/10){
+
+            if (equal != x%10)  return false;
+        }
+        if (x != equal) return false;
+
+        return true;
 
     }
     public static void square(int x) {
@@ -246,27 +251,23 @@ public class Utils {
         return -1;
     }
     public static int maxAbs(int[] arr){
-        int max =0;
-        boolean sing = false;
-        for (int x:arr){
-            if (x<0) {
-                x*=-1;
-                if ( x > max) {
-                    sing = true;
-                    max = x;
-                }
+        int singarr [] = new int[arr.length];
+        for (int x = 0; x < arr.length; x++)
+            if (arr[x] < 0) {
+                singarr[x] = 1;
+                arr[x] *=-1;
             }
-            if (x>max){
-                sing = false;
-                max = x;
-            }
-
+        int max = 0;
+        for ( int x = 0; x < arr.length; x++){
+            if ( arr [x] > arr[max]) max = x;
         }
+        if (singarr[max] == 1){
+            return arr[max] *=-1;
+        }
+        return arr[max];
 
 
-        if (sing == true) {
-            return max*=-1;
-        } return max;
+
     }
     public static int countPositive(int[] arr){
         int i =0;
@@ -291,25 +292,20 @@ public class Utils {
     }
 
     public static void reverse(int[] arr){
-
-        for(int i:arr){
-            System.out.print(i+" ");
-        } System.out.println();
-        int change =0;
-        for(int i = 0; i<(arr.length-1)/2; i++){
-            change =arr[i];
-            arr[i]= arr[arr.length-i-1];
-            arr[arr.length-i-1] = change;
+        System.out.println(arr);
+        int reversarr [] = new int[arr.length];
+        int j =0;
+        for (int i = arr.length; i > 0; i--){
+            reversarr[j] = arr[i-1];
+            j++;
         }
-        for(int i:arr){
-            System.out.print(i+" ");
-        }System.out.println();
+        arr = reversarr;
     }
     public static int[] reverseBack(int[] arr) {
         int [] reversarr = new int[arr.length];
         int index=0;
         for (int i = arr.length - 1; i>0 ; i--, index++) {
-            reversarr[index] = arr[i];
+            reversarr[index] = arr[i-1];
         }
         return reversarr;
     }
@@ -355,65 +351,25 @@ public class Utils {
         } return result;
     }
 
-    public static int[] add(int[] arr, int x, int pos){
+    public static int[] add(int[] arr, int  insert, int pos){
         int [] result = new int[arr.length+1];
-        int [] stack = new int [arr.length-pos];
-        int z =0;
-        if (pos == arr.length){result[arr.length]=x;}
-        for ( int i = pos; i<arr.length; i++)
-        {
-            stack[z] = arr[i];
-            z++;
-        }
-        for (int i=0; i<arr.length;i++){
-            if (i==pos){
-                result[i] =x;
-                i++;
-                for (int y:stack){ result[i]=y;i++;}
-                break;
-            }
-            result[i] = arr[i];
-
-        }
-
-
-        return result;
-
-
-    }
-    public static int[] arradd(int[] arr, int[] ins, int pos) {
-        int[] result = new int[arr.length + ins.length];
-        int i = 0;
-        if (pos == arr.length){
-            for (int x : arr){
-                result[i] = x;
-                i++;
-            }
-            for (int x:ins){
-                result[i]=x;
-                i++;
-            }
-        } else {
-            int [] stack = new int[arr.length-pos];
-            for (int x=pos; x<arr.length; x++){
-                stack[i]=arr[x];
-                i++;
-            }
-            i=0;
-            for (int x=0; x!=pos; x++){
-                result[i] = arr[x];
-                i++;
-            }
-            for (int x:ins){result[i]=x; i++;}
-            for (int x:stack){result[i]=x; i++;}
-
-        }
-
-
-
+        result [pos] = insert;
+        for (int x = 0; pos > x; x++) result [x] = arr[x];
+        for (int x = pos; x < arr.length; x++) result[x+1] = arr[x];
 
         return result;
     }
+    public static int[] arradd(int[] arr, int[] insert, int pos) {
+        if (arr == null && insert != null) return insert;
+        if (arr != null && insert == null) return arr;
+        if (arr == null && insert == null) return null;
+        int[] result = new int[arr.length + insert.length];
+        for (int x = 0; pos > x; x++) result [x] = arr[x];
+        for (int x = 0; x < insert.length; x++) result[pos +x] = insert[x];
+        for (int x = pos; x < arr.length; x++) result[insert.length + x] = insert[x];
+        return result;
+    }
+
 }
 
 
