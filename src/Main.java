@@ -92,9 +92,9 @@ public class Main {
         System.out.println(point2);
         System.out.println(point3);
         System.out.println();
-        Human h1 = new Human(new Name("","Клеопатра",""), 152);
-        Human h2 = new Human(new Name("Пушкин","", ""), 167);
-        Human h3 = new Human(new Name("","Владимир", ""), 189);
+        Human h1 = new Human(new Name("Клеопатра","",""), 152);
+        Human h2 = new Human(new Name("","Пушкин", ""), 167);
+        Human h3 = new Human(new Name("Владимир","Маяковский", ""), 189);
 //1.1.2
         System.out.println("Name: " + h1.getName() + " hight " + h1.getHight() );
         System.out.println("Name: " + h2.getName() + " hight " + h2.getHight() );
