@@ -15,12 +15,10 @@ public class Utils {
         return (int) x -'0';
     }
     public static boolean isPositive(int x) {
-        boolean z = x>=0;
-        return z;
+        return x >= 0;
     }
     public static boolean is2Digits(int x){
-        boolean z = x >= 9 & x <= 99;
-        return  z;
+        return x >= 9 & x <= 99;
     }
     public static boolean isUpperCase(char x){
         return  (x >= 'A' & x <= 'Z');
