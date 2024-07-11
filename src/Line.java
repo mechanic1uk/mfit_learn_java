@@ -15,6 +15,19 @@ public class Line {
         return this.endPoint;
     }
 
+    public void setStartPoint(Point startPoint) {
+        this.startPoint = startPoint;
+    }
+
+    public void setEndPoint(Point endPoint) {
+        this.endPoint = endPoint;
+    }
+    public void setStartEndPoint(Point startPoint, Point endPoint) {
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+
+    }
+
     @Override
     public String toString(){
         return "Линия от " + startPoint + " до " + endPoint;

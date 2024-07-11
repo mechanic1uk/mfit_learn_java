@@ -92,9 +92,9 @@ public class Main {
         System.out.println(point2);
         System.out.println(point3);
         System.out.println();
-        Human h1 = new Human("Клеопатра", 152);
-        Human h2 = new Human("Пушкин", 167);
-        Human h3 = new Human("Владимир", 189);
+        Human h1 = new Human(new Name("","Клеопатра",""), 152);
+        Human h2 = new Human(new Name("Пушкин","", ""), 167);
+        Human h3 = new Human(new Name("","Владимир", ""), 189);
 //1.1.2
         System.out.println("Name: " + h1.getName() + " hight " + h1.getHight() );
         System.out.println("Name: " + h2.getName() + " hight " + h2.getHight() );
@@ -140,6 +140,18 @@ public class Main {
         System.out.println(line1.toString());
         System.out.println(line2.toString());
         System.out.println(line3.toString());
+        line1.setStartEndPoint( new Point(22,33 ), new Point(44,99 ));
+        line2.setStartEndPoint( new Point(100,1 ), new Point(144,990 ));
+        line3.setStartEndPoint(line1.getStartPoint(), line2.getEndPoint());
+        System.out.println();
+        System.out.println();
+        System.out.println(line1.toString());
+        System.out.println(line2.toString());
+        System.out.println(line3.toString());
+
+
+
+
 
     }
 

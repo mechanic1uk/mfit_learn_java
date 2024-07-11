@@ -1,13 +1,13 @@
 public class Human {
-    private String name;
+    private Name name;
     private int hight;
 
 
-    Human(String name, int hight){
+    Human(Name name, int hight){
         this.name = name;
         this.hight = hight;
     }
-    public String getName(){
+    public Name getName(){
         return this.name;
     }
     public int getHight(){
