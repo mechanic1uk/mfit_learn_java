@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -167,7 +169,7 @@ public class Main {
         System.out.println(kozlov.toString());
         System.out.println(petrov.toString());
         System.out.println(sidorov.toString());
-*/
+
         Student Vasya = new Student("Вася", new int[]{3, 4, 5});
         Student Petya = new Student("Петя", Vasya.getAssassments());
         Student Andrei = new Student("Андрей", Vasya.getAssassments());
@@ -178,8 +180,72 @@ public class Main {
         System.out.println(Petya.toString());
         System.out.println(Andrei.toString());
 
+        Необходимо выполнить следующие задачи:
+1.	Создать первую Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}
+2.	Создайте вторую Ломаную, чья первая и последняя Точка совпадает с таковыми у первой Ломаной,
+но в качестве середины имеет точки: {2,-5}, {4,-8}
+3.	Сдвиньте начало первой Ломаной таким образом, чтобы одновременно сдвинулось начало второй Ломаной.
+
+
+
+        Polyline first = new Polyline();
+        Polyline second = new Polyline();
+        List<Point> pointList= new ArrayList<>();
+
+
+        first.addPoint(new Point(1,5));
+        first.addPoint(new Point(2,8));
+        first.addPoint(new Point(5,3));
+
+
+        second.addPoint( first.getPoint(0));
+        second.addPoint( new Point(2,-5));
+        second.addPoint( new Point(4,-5));
+        second.addPoint( first.getPoint(first.getSize()-1));
+        System.out.println(first.toString());
+        System.out.println(second.toString());
+        System.out.println();
+
+
+        first.setPoints(new Point(0,10));
+        second.addPoint( first.getPoint(0));
+
+        System.out.println(first.toString());
+        System.out.println(second.toString());
+*/
+        Fraction f1 = new Fraction(1, 3);
+        Fraction f2 = new Fraction(2, 3);
+        Fraction f3 = new Fraction(3, 5);
+
+        // Сложение
+        Fraction sum = f1.add(f2);
+        System.out.println("1/3 + 2/3 = " + sum); // Вывод: 1/3 + 2/3 = 1
+
+// Вычитание
+        Fraction diff = f2.subtract(f1);
+        System.out.println("2/3 - 1/3 = " + diff); // Вывод: 2/3 - 1/3 = 1/3
+
+// Умножение
+        Fraction product = f1.multiply(f2);
+        System.out.println("1/3 * 2/3 = " + product); // Вывод: 1/3 * 2/3 = 2/9
+
+// Деление
+        Fraction quotient = f2.divide(f1);
+        System.out.println("2/3 / 1/3 = " + quotient); // Вывод: 2/3 / 1/3 = 2
+
+        System.out.println("1/3 * 2/3 = " + f1.multiply(f2)); // Вывод: 1/3 * 2/3 = 2/9
+        Fraction result = f1.add(f2).divide(f3).subtract(5);
+        System.out.println(result); // Вывод: -19/15
     }
 
 }
 
 // 1.6.4, 1.6.6, 1.6.9, 1.6.10, 1.6.11
+
+/*
+1.6.4 Дроби. Измените сущность Дробь из задачи 1.5.5. Реализуйте следующие требования:
+•	Дробь не может быть изменена после создания
+•	Необходимо корректно обрабатывать отрицательные значения. Учтите, что знаменатель не может быть отрицательным.
+Продемонстрируйте работоспособность решения на примерах.
+
+ */
