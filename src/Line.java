@@ -27,6 +27,10 @@ public class Line {
         this.endPoint = endPoint;
 
     }
+    public int distance (){
+        double result = Math.sqrt(endPoint.getX() - startPoint.getX()) + Math.sqrt(endPoint.getY()-startPoint.getY());
+        return (int) result;
+    }
 
     @Override
     public String toString(){
