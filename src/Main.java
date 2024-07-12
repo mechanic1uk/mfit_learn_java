@@ -213,9 +213,10 @@ public class Main {
         System.out.println(first.toString());
         System.out.println(second.toString());
 */
-        Fraction f1 = new Fraction(1, 3);
+        Fraction f1 = new Fraction(1, -3);
         Fraction f2 = new Fraction(2, 3);
         Fraction f3 = new Fraction(3, 5);
+
 
         // Сложение
         Fraction sum = f1.add(f2);

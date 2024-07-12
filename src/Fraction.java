@@ -3,6 +3,7 @@ public class Fraction {
     private int denominator;
 
     Fraction(int numerator, int denominator) {
+        if (denominator < 0) throw new IllegalArgumentException("Значения знаменателя не может быть отрицательным");
         this.numerator = numerator;
         this.denominator = denominator;
     }
