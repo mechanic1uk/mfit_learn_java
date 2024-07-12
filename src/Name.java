@@ -1,13 +1,27 @@
 public class Name {
-    private String firstName; // Имя
-    private String lastName; // Фамилия
-    private String patronymic; // Отчество
+    private String firstName = null; // Имя
+    private String lastName = null; // Фамилия
+    private String patronymic =null; // Отчество
     Name(String firstName, String lastName, String patronymic){
         this.firstName = firstName;
         this.lastName = lastName;
         this.patronymic = patronymic;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
     @Override
+
     public String toString(){
         StringBuilder fullName = new StringBuilder();
         if (firstName  != null && !firstName.isEmpty()) fullName.append(firstName + " ");

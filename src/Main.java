@@ -84,7 +84,7 @@ public class Main {
 //        String s = "1+2";
 //        String[] spl = s.split("\\+");
 //        for (String str:spl){System.out.println(str);}
-//1.1.1
+/*//1.1.1
         Point point1 = new Point(1,5);
         Point point2 = new Point(10,51);
         Point point3 = new Point(11,25);
@@ -149,9 +149,24 @@ public class Main {
         System.out.println(line2.toString());
         System.out.println(line3.toString());
 
+    Name gfath = new Name("Иван","Чудов","Сергеевич" );
+    Name son = new Name("Петр","Чудов","" );
+    Name fath = new Name("Борис","","" );
+    Human ivan = new Human(gfath);
+    Human petr = new Human(son,gfath);
+    Human boris = new Human(fath,son);
 
+        System.out.println(ivan.toString());
+        System.out.println(petr.toString());
+        System.out.println(boris.toString());
+*/
+        Employees kozlov = new Employees("Козлов", "IT");
+        Employees petrov = new Employees("Петров", "IT",kozlov);
+        Employees sidorov = new Employees("Сидоров", "IT", kozlov);
 
-
+        System.out.println(kozlov.toString());
+        System.out.println(petrov.toString());
+        System.out.println(sidorov.toString());
 
     }
 
