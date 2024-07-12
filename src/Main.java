@@ -159,7 +159,7 @@ public class Main {
         System.out.println(ivan.toString());
         System.out.println(petr.toString());
         System.out.println(boris.toString());
-*/
+
         Employees kozlov = new Employees("Козлов", "IT");
         Employees petrov = new Employees("Петров", "IT",kozlov);
         Employees sidorov = new Employees("Сидоров", "IT", kozlov);
@@ -167,6 +167,16 @@ public class Main {
         System.out.println(kozlov.toString());
         System.out.println(petrov.toString());
         System.out.println(sidorov.toString());
+*/
+        Student Vasya = new Student("Вася", new int[]{3, 4, 5});
+        Student Petya = new Student("Петя", Vasya.getAssassments());
+        Student Andrei = new Student("Андрей", Vasya.getAssassments());
+
+        Vasya.setAssessment(1,3);
+        Petya.setAssessment(1,9);
+        System.out.println(Vasya.toString());
+        System.out.println(Petya.toString());
+        System.out.println(Andrei.toString());
 
     }
 
