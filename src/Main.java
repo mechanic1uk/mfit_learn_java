@@ -158,7 +158,7 @@ public class Main {
         Fraction result = f1.add(f2).divide(f3).subtract(5);
         System.out.println(result); // Вывод: -19/15
 */
-        Point start = new Point(1,1);
+/*        Point start = new Point(1,1);
         Point end = new Point(10,15);
         Line firstEx = new Line(start, end);
         Line secondEx = new Line(start, end);
@@ -167,19 +167,24 @@ public class Main {
         System.out.println(firstEx.distance());
         System.out.println(firstEx.getStartPoint()+" "+ firstEx.getEndPoint());
         System.out.println(secondEx.getStartPoint()+" "+secondEx.getEndPoint());
+*/
+        Student Petrov = new Student("Петров");
+
+        Petrov.setAssessments(new int []{4, 2, 3, 4, 5, 5, 5} );
+        System.out.println(Petrov.toString());
+        Petrov.changeAssessment(1,5);
+        System.out.println(Petrov.toString());
 
     }
 
 }
 
-// 1.6.4, 1.6.6, 1.6.9, 1.6.10, 1.6.11
+//  1.6.9, 1.6.10, 1.6.11
 
 /*
-1.6.6 Отдельные линии. Измените сущность Линия из задачи 1.5.3. Необходимо, чтобы Линия соответствовала следующим требованиям:
-•	Две любые линии не могут ссылаться на один и тот же объект точки.
-•	У Линии можно изменить координаты начала или конца
-•	У Линии можно запросить координаты начала или конца
-Продемонстрируйте работоспособность решения на примерах.
+
+1.6.9 Диапазон оценок. Измените сущность Студент из задачи 1.5.6. Необходимо гарантировать, что добавлять Студенту можно только оценки в диапазоне от 2 до 5, при этом у Студента всегда можно узнать список оценок.
+Продемонстрируйте на примерах, что нет способа задать Студенту некорректную оценку.
 
 
  */
