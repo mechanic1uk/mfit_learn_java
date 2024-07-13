@@ -23,11 +23,16 @@ public class Employees {
 
     Employees(String employeesFullName, String department, Employees boss) {
         this(employeesFullName, department);
+        if(boss.department != this.department) throw new IllegalArgumentException(boss.employees +
+                " не является начальником в котором работает " + this.employees);
         this.boss = boss;
     }
 
     public void setBoss(Employees boss) {
+        if(boss.department != this.department) throw new IllegalArgumentException(boss.employees+
+                " не является начальником в котором работает " + this.employees);
         this.boss = boss;
+
     }
 
     public void setDepartment(String department) {

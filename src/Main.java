@@ -99,12 +99,6 @@ public class Main {
         System.out.println(Petya.toString());
         System.out.println(Andrei.toString());
 
-        Необходимо выполнить следующие задачи:
-1.	Создать первую Ломаную, проходящую через точки {1;5}, {2;8}, {5;3}
-2.	Создайте вторую Ломаную, чья первая и последняя Точка совпадает с таковыми у первой Ломаной,
-но в качестве середины имеет точки: {2,-5}, {4,-8}
-3.	Сдвиньте начало первой Ломаной таким образом, чтобы одновременно сдвинулось начало второй Ломаной.
-
 
 
         Polyline first = new Polyline();
@@ -168,23 +162,65 @@ public class Main {
         System.out.println(firstEx.getStartPoint()+" "+ firstEx.getEndPoint());
         System.out.println(secondEx.getStartPoint()+" "+secondEx.getEndPoint());
 */
-        Student Petrov = new Student("Петров");
+/*        Student Petrov = new Student("Петров");
 
         Petrov.setAssessments(new int []{4, 2, 3, 4, 5, 5, 5} );
         System.out.println(Petrov.toString());
         Petrov.changeAssessment(1,5);
         System.out.println(Petrov.toString());
+*/
+ /*       Employees kozlov = new Employees("Козлов", "OMT");
+        Employees skozlov = new Employees("Cкозлов", "IT");
+        Employees petrov = new Employees("Петров", "IT",skozlov);
+        Employees sidorov = new Employees("Сидоров", "IT", skozlov);
+        System.out.println(skozlov.toString());
+        System.out.println(kozlov.toString());
+        System.out.println(petrov.toString());
+        System.out.println(sidorov.toString());
+
+  */
+        City city1 = new City("Москва");
+        City city2 = new City("Воронеж");
+        City city3 = new City("Казань");
+
+        // Создаем прямую дорогу между городами 1 и 2
+        city1.addRoad(city2, true);
+
+        // Создаем транзитную дорогу между городами 1 и 3 через город 2
+        city1.addRoad(city3, false);
+        city2.addRoad(city3, true);
+
+        // Проверяем наличие прямой дороги между городами
+        System.out.println("Дорога между " +city1.getName() +" и "+city2.getName() +" "+ city1.isDirectRoad(city2)); // true
+        System.out.println("Дорога между " +city1.getName() +" и "+city3.getName() +" "+ city1.isDirectRoad(city3)); // false
+
+
+        // Добавляем новую прямую дорогу между городами 1 и 3
+        city1.addRoad(city3, true);
+
+        // Удаляем дорогу между городами 1 и 2
+        city1.removeRoad(city2);
+
+        // Проверяем, что города 1 и 2 больше не связаны
+        System.out.println(city1.getName()+" и "+city2.getName() +" : " + city1.isConnected(city2)); // false
 
     }
 
 }
 
-//  1.6.9, 1.6.10, 1.6.11
+//   1.6.10, 1.6.11
 
 /*
 
-1.6.9 Диапазон оценок. Измените сущность Студент из задачи 1.5.6. Необходимо гарантировать, что добавлять Студенту можно только оценки в диапазоне от 2 до 5, при этом у Студента всегда можно узнать список оценок.
-Продемонстрируйте на примерах, что нет способа задать Студенту некорректную оценку.
+1.6.10 Дороги. Измените сущности из задачи 1.3.3.
+Гарантируйте, что между двумя городами может быть только одна прямая
+дорога (другой путь может быть проложен только транзитом через другие города).
+Города можно создавать с указанием заранее заданных путей,
+в любой момент времени можно добавить новую дорогу в любой город и удалить имеющуюся дорогу.
+
+1.6.11 Начальник отдела. Измените сущности полученные в задаче 1.2.4.
+Необходимо гарантировать, что начальник отдела гарантированно работает в том же отделе, в котором он начальник.
+
 
 
  */
