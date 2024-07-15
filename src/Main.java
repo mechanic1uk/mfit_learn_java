@@ -179,6 +179,7 @@ public class Main {
         System.out.println(sidorov.toString());
 
   */
+ /*
         City city1 = new City("Москва");
         City city2 = new City("Воронеж");
         City city3 = new City("Казань");
@@ -191,8 +192,8 @@ public class Main {
         city2.addRoad(city3, true);
 
         // Проверяем наличие прямой дороги между городами
-        System.out.println("Дорога между " +city1.getName() +" и "+city2.getName() +" "+ city1.isDirectRoad(city2)); // true
-        System.out.println("Дорога между " +city1.getName() +" и "+city3.getName() +" "+ city1.isDirectRoad(city3)); // false
+        System.out.println("Дорога между " + city1.getName() + " и " + city2.getName() + " " + city1.isDirectRoad(city2)); // true
+        System.out.println("Дорога между " + city1.getName() + " и " + city3.getName() + " " + city1.isDirectRoad(city3)); // false
 
 
         // Добавляем новую прямую дорогу между городами 1 и 3
@@ -202,25 +203,42 @@ public class Main {
         city1.removeRoad(city2);
 
         // Проверяем, что города 1 и 2 больше не связаны
-        System.out.println(city1.getName()+" и "+city2.getName() +" : " + city1.isConnected(city2)); // false
+        System.out.println(city1.getName() + " и " + city2.getName() + " : " + city1.isConnected(city2)); // false
 
+         */
+
+ /*       Polyline first = new Polyline();
+        Polyline second = new Polyline();
+        List<Point> pointList= new ArrayList<>();
+
+
+        first.addPoint(new Point(1,5));
+        first.addPoint(new Point(2,8));
+        first.addPoint(new Point(5,3));
+
+
+        second.addPoint( first.getPoint(0));
+        second.addPoint( new Point(2,-5));
+        second.addPoint( new Point(4,-5));
+        second.addPoint( first.getPoint(first.getSize()-1));
+        System.out.println(first.toString());
+        System.out.println(second.toString());
+        System.out.println();
+
+
+        first.setPoints(new Point(0,10));
+        second.addPoint( first.getPoint(0));
+
+        System.out.println(first.toString());
+        System.out.println(second.toString());
+
+  */
+Line line = new Line(13,222,3,43);
+System.out.println(line.toString());
     }
 
 }
 
-//   1.6.10, 1.6.11
-
 /*
-
-1.6.10 Дороги. Измените сущности из задачи 1.3.3.
-Гарантируйте, что между двумя городами может быть только одна прямая
-дорога (другой путь может быть проложен только транзитом через другие города).
-Города можно создавать с указанием заранее заданных путей,
-в любой момент времени можно добавить новую дорогу в любой город и удалить имеющуюся дорогу.
-
-1.6.11 Начальник отдела. Измените сущности полученные в задаче 1.2.4.
-Необходимо гарантировать, что начальник отдела гарантированно работает в том же отделе, в котором он начальник.
-
-
-
+3.1.2, 3.2.3, 3.2.4, 3.3.3, 3.3.5
  */

@@ -7,6 +7,11 @@ public class Line {
         this.startPoint = new Point(startPoint.getX(), startPoint.getY());
         this.endPoint = new Point(endPoint.getX(), endPoint.getY() );
     }
+    Line (int ... points){
+        if (points.length < 4) throw new IllegalArgumentException("Не верно указано количество аргументов. Количество аргументов должно быть не меньше 4-x");
+        this.startPoint = new Point(points[0], points[1]);
+        this.endPoint = new Point(points[2], points[3]);
+    }
 
     public Point getStartPoint(){
         return this.startPoint;
