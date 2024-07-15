@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -169,16 +166,41 @@ public class Main {
         Petrov.changeAssessment(1,5);
         System.out.println(Petrov.toString());
 */
- /*       Employees kozlov = new Employees("Козлов", "OMT");
-        Employees skozlov = new Employees("Cкозлов", "IT");
-        Employees petrov = new Employees("Петров", "IT",skozlov);
-        Employees sidorov = new Employees("Сидоров", "IT", skozlov);
-        System.out.println(skozlov.toString());
+        Department it = new Department("IT");
+        Department omt = new Department("OMT");
+
+
+        Employee kozlov = new Employee("Козлов", omt);
+        Employee ivanov = new Employee("Иванов", it);
+        Employee petrov = new Employee("Петров", it);
+        Employee sidorov = new Employee("Сидоров", omt);
+
+        it.setBoss(ivanov);
+        omt.setBoss(kozlov);
+
+
         System.out.println(kozlov.toString());
+        System.out.println(ivanov.toString());
+        System.out.println(petrov.toString());
+        System.out.println(sidorov.toString());
+        System.out.println();
+
+        it.setBoss(kozlov);
+
+        System.out.println(it.getBoss());
+        System.out.println(omt.getBoss());
+        System.out.println();
+        System.out.println(kozlov.toString());
+        System.out.println(ivanov.toString());
         System.out.println(petrov.toString());
         System.out.println(sidorov.toString());
 
-  */
+
+
+
+
+
+
  /*
         City city1 = new City("Москва");
         City city2 = new City("Воронеж");
@@ -233,8 +255,7 @@ public class Main {
         System.out.println(second.toString());
 
   */
-Line line = new Line(13,222,3,43);
-System.out.println(line.toString());
+
     }
 
 }

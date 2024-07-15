@@ -2,15 +2,19 @@ public class Name {
     private String firstName = null; // Имя
     private String lastName = null; // Фамилия
     private String patronymic =null; // Отчество
-    Name(String firstName, String lastName, String patronymic){
-        this.firstName = firstName;
+    public Name (String lastName){
         this.lastName = lastName;
+    }
+    public Name(String firstName, String lastName, String patronymic){
+        this(lastName);
+        this.firstName = firstName;
         this.patronymic = patronymic;
     }
 
     public String getFirstName() {
         return firstName;
     }
+
 
     public String getLastName() {
         return lastName;
@@ -20,6 +24,19 @@ public class Name {
         return patronymic;
     }
 
+    public void setFullName(String name) {
+        String [] splitname = name.split(" ");
+        if (splitname.length == 3) {
+            this.firstName = splitname[0];
+            this.lastName = splitname[1];
+            this.patronymic = splitname[2];
+        } else if (splitname.length == 2) {
+
+        }
+    }
+    public void setLastName (String lastName){
+        this.lastName = lastName;
+    }
     @Override
 
     public String toString(){
