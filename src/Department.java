@@ -42,10 +42,12 @@ public class Department {
         this.nameDepartment = nameDepartment;
     }
 
-    public void setEmployees(Employee employee) {
+    public void addEmployee(Employee employee) {
+
         this.employees.add(employee);
     }
     public void removeEmployee(Employee employee){
+
         this.employees.remove(employee);
     }
 

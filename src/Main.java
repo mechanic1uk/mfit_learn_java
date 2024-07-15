@@ -171,6 +171,7 @@ public class Main {
 
 
         Employee kozlov = new Employee("Козлов", omt);
+        Employee kozlov1 = new Employee("Козлов1", omt);
         Employee ivanov = new Employee("Иванов", it);
         Employee petrov = new Employee("Петров", it);
         Employee sidorov = new Employee("Сидоров", omt);
@@ -184,16 +185,21 @@ public class Main {
         System.out.println(petrov.toString());
         System.out.println(sidorov.toString());
         System.out.println();
+        System.out.println(it.getEmployees());
+
+        System.out.println(omt.getEmployees());
 
         it.setBoss(kozlov);
 
-        System.out.println(it.getBoss());
-        System.out.println(omt.getBoss());
+//        System.out.println(it.getBoss());
+//        System.out.println(omt.getBoss());
         System.out.println();
         System.out.println(kozlov.toString());
         System.out.println(ivanov.toString());
         System.out.println(petrov.toString());
-        System.out.println(sidorov.toString());
+//        System.out.println(sidorov.toString());
+        System.out.println(it.getEmployees());
+        System.out.println(omt.getEmployees());
 
 
 

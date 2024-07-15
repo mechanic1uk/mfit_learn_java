@@ -11,6 +11,7 @@ public class Employee {
     Employee(String name, Department department) {
         this(name);
         this.department = department;
+        this.department.addEmployee(this);
     }
 
     public String getName() {
@@ -23,8 +24,12 @@ public class Employee {
 
     public void setDepartment(Department department) {
      if (department == this.department) return;
-     if(department != null && this.department.getBoss() == this ) this.department.setBoss(null);
+     if(department != null && this.department.getBoss() == this ) {
+         this.department.setBoss(null);
+         this.department.removeEmployee(this);
+     }
      this.department = department;
+     this.department.addEmployee(this);
     }
 
     public Department getDepartment() {
