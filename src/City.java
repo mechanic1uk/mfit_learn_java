@@ -17,10 +17,6 @@ public class City {
     }
 
 
-    public void addPath(City destination, int cost) {
-        paths.put(destination, cost);
-    }
-
     public String getName() {
         return name;
     }
@@ -28,7 +24,24 @@ public class City {
     public Map<City, Integer> getPaths() {
         return paths;
     }
+    // Методы для работы с дорогами
+    public void addPath(City destination, int cost) {
+        // Проверяем, что между этими городами еще нет дороги
+        if (!paths.containsKey(destination)) {
+            paths.put(destination, cost);
+        } else {
+            throw new IllegalArgumentException("Дорога между этими городами уже существует");
+        }
+    }
 
+    public void removePath(City destination) {
+        // Проверяем, что дорога между городами существует
+        if (paths.containsKey(destination)) {
+            paths.remove(destination);
+        } else {
+            throw new IllegalArgumentException("Дороги между этими городами не существует");
+        }
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -60,6 +73,5 @@ public class City {
 (другой путь может быть проложен только транзитом через другие города).
 Города можно создавать с указанием заранее заданных путей,
 в любой момент времени можно добавить новую дорогу в любой город и удалить имеющуюся дорогу.
-
 
  */
