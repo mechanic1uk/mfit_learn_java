@@ -5,13 +5,12 @@ public class Main {
 
         Student vasya = new Student("Вася",3, 4, 5,4);
         Student petya = new Student("Петя", 5,5,5,5);
+        petya.setAssessment(6);
+        Student maxim = new Student("Максим", 6,5,1,5);
 
-        System.out.println(vasya);
-        System.out.println(petya);
-        System.out.println("Средняя оценка студента: " + vasya.averageAssessment());
-        System.out.println("Студент является отличником: " + vasya.isGoodStudent());
-        System.out.println("Средняя оценка студента: " + petya.averageAssessment());
-        System.out.println(petya.isGoodStudent());
+
+
+
 
 
 

@@ -19,8 +19,8 @@ public class Student {
 
 
     public boolean chekAssessment (int assessment){
-        if (assessment < 2) throw new IllegalArgumentException(" Минимально допустимая оценка это 2. Измените указанную вами оценку" + assessment);
-        if (assessment > 5) throw new IllegalArgumentException(" Максимально допустимая оценка это 5. Измените указанную вами оценку" + assessment);
+        if (assessment < 2) throw new IllegalArgumentException(" Минимально допустимая оценка это 2. Измените указанную вами оценку " + assessment);
+        if (assessment > 5) throw new IllegalArgumentException(" Максимально допустимая оценка это 5. Измените указанную вами оценку " + assessment);
         return true;
     }
 
