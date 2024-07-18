@@ -3,34 +3,55 @@ import java.util.Map;
 
 public class City {
     private String name;
-    private Map<City, Boolean> roads;
-
+    private Map<City, Integer> paths;
     public City(String name) {
         this.name = name;
-        this.roads = new HashMap<>();
+        this.paths = new HashMap<>();
+    }
+
+    public void addPath(City destination, int cost) {
+        paths.put(destination, cost);
     }
 
     public String getName() {
         return name;
     }
 
-    public void addRoad(City destination, boolean direct) {
-        roads.put(destination, direct);
-        destination.roads.put(this, direct);
+    public Map<City, Integer> getPaths() {
+        return paths;
     }
 
-    public void removeRoad(City destination) {
-        roads.remove(destination);
-        destination.roads.remove(this);
-    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(name).append("\n");
 
-    public boolean isDirectRoad(City destination) {
-        return roads.getOrDefault(destination, false);
-    }
+        for (Map.Entry<City, Integer> entry : paths.entrySet()) {
+            sb.append("\t").append(entry.getKey().getName()).append(": ").append(entry.getValue()).append("\n");
+        }
 
-    public boolean isConnected(City destination) {
-        return roads.containsKey(destination);
+        return sb.toString();
     }
 }
 
+/* @todo
 
+1.3.3
+Города. Создайте сущность Город, которая будет представлять собой точку на карте со следующими характеристиками:
+•	Название города
+•	Набор путей к следующим городам, где путь представляет собой сочетание Города и стоимости поездки в него.
+Кроме того, Город может возвращать текстовое представление, в виде названия города и списка связанных с ним городов (в виде пары: “название: стоимость”).
+
+1.4.8
+Создаем Города. Измените сущность Город из задачи 1.3.3. Новые требования включают:
+•	Город можно создать указав только название
+•	Город можно создать указав название и набор связанных с ним городов и стоимостей путей к ним
+
+1.6.10
+Дороги. Измените сущности из задачи 1.3.3. Гарантируйте, что между двумя городами может быть только одна прямая дорога
+(другой путь может быть проложен только транзитом через другие города).
+Города можно создавать с указанием заранее заданных путей,
+в любой момент времени можно добавить новую дорогу в любой город и удалить имеющуюся дорогу.
+
+
+ */
