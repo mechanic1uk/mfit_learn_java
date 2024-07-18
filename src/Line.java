@@ -28,9 +28,8 @@ public class Line {
         return new Point(this.endPoint.getX(), this.endPoint.getY());
     }
 
-    public int distance (){
-        double result = Math.sqrt(endPoint.getX() - startPoint.getX()) + Math.sqrt(endPoint.getY()-startPoint.getY());
-        return (int) result;
+    public double distance (){
+        return Math.sqrt(Math.pow(endPoint.getX() - startPoint.getX(), 2) + Math.pow(endPoint.getY()-startPoint.getY(), 2));
     }
 
     @Override
