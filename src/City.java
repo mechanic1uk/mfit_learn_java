@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class City {
@@ -8,6 +9,13 @@ public class City {
         this.name = name;
         this.paths = new HashMap<>();
     }
+    public City(String name, Map<City, Integer> cityList) {
+        this(name);
+       for( Map.Entry<City, Integer> entry : cityList.entrySet()){
+           this.paths.put(entry.getKey(), entry.getValue());
+       }
+    }
+
 
     public void addPath(City destination, int cost) {
         paths.put(destination, cost);

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,20 +10,14 @@ public class Main {
        City c = new City("C");
        City d = new City("D");
        City e = new City("E");
-       City f = new City("F");
+       Map <City, Integer>  listcity = new HashMap<>();
+       listcity.put(b,100);
+       listcity.put(c,200);
+       listcity.put(d,300);
+       listcity.put(e,400);
+       City f = new City("F", listcity);
 
-       a.addPath(b,5);
-       a.addPath(f,1);
-       a.addPath(d,6);
-       b.addPath(c,3);
-       b.addPath(a,5);
-       c.addPath(a,6);
-       c.addPath(b,3);
-       d.addPath(a,6);
-       d.addPath(e,2);
-       e.addPath(f,2);
-       f.addPath(b,1);
-       f.addPath(e,2);
+
 
        System.out.println(a);
        System.out.println(b);
