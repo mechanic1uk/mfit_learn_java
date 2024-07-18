@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Student {
@@ -53,6 +54,22 @@ public class Student {
             chekAssessment(i);
             this.assessment.add(i);
         }
+
+    }
+    public boolean isGoodStudent(){
+        return  (averageAssessment() == 5);
+    }
+    public double  averageAssessment(){
+       if(this.assessment.isEmpty()) {
+           return 0;
+       } else {
+           int sum = 0;
+           for (int i: assessment){
+               sum +=i;
+           }
+           return sum/assessment.size();
+       }
+
 
     }
 
