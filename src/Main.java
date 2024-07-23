@@ -1,51 +1,30 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class Main {
     public static void main(String[] args) {
 
-       City a = new City("A");
-       City b = new City("B");
-       City c = new City("C");
-       City d = new City("D");
-       City e = new City("E");
-       Map <City, Integer>  listcity = new HashMap<>();
-       listcity.put(b,100);
-       listcity.put(c,200);
-       listcity.put(d,300);
-       listcity.put(e,400);
-       City f = new City("F", listcity);
-       f.addPath(a,1);
-       System.out.println(f);
-
-
-       a.addPath(b,11);
-       a.addPath(c,21);
-
-       System.out.println(a);
-       System.out.println(f);
-
-       a.removePath(b);
-       f.removePath(a);
-       f.removePath(d);
-       f.removePath(e);
-       System.out.println(a);
-       System.out.println(f);
-       f.removePath(e);
-
-
-       f.addPath(b,99);
-
-
-
-
-
-
-
-
+       Point p1 = new Point(1,5);
+       Point p2 = new Point(2,8);
+       Point p3 = new Point(5,3);
+       Polyline pln1 = new Polyline();
+       pln1.addPoint(p1,p2,p3);
+       Polyline pln2 = new Polyline(pln1.getFirstPoint(), new Point(2,-5), new Point(4,-8), pln1.getLastPoint());
+       System.out.println(pln1);
+       System.out.println(pln2);
+       pln1.getFirstPoint().setXY(11,22);
+       pln1.getLastPoint().setXY(33,32);
+       System.out.println(pln1);
+       System.out.println(pln2);
 
 
     }
 
 }
+
+
+/*
+
+
+
+3.1.2, 3.2.3, 3.2.4, 3.3.3, 3.3.5
+ */
