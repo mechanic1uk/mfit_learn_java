@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
 
-        ClosedPolyline cpln = new ClosedPolyline(new Point(1,2),new Point(2,3),new Point(4,5));
+        ClosedPolyline cpln = new ClosedPolyline(new Point(1,2),new Point(3,4),new Point(5,5));
         System.out.println(cpln);
-        cpln.addLastPoint(new Point(3,4));
+        cpln.addLastPoint(new Point(4,  1));
         System.out.println(cpln);
         System.out.println(cpln.lenght());
     }
