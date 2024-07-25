@@ -1,3 +1,6 @@
+package people;
+
+import people.Department;
 
 public class Employee {
 

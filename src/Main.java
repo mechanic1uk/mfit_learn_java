@@ -1,10 +1,6 @@
-import Birds.Bird;
-import Birds.Cuckoo;
-import Birds.Parrot;
-import Birds.Sparrow;
-
-import java.util.ArrayList;
-import java.util.List;
+import birds.Cuckoo;
+import birds.Parrot;
+import birds.Sparrow;
 
 public class Main {
     public static void main(String[] args) {

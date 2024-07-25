@@ -1,4 +1,4 @@
-package Birds;
+package birds;
 
 
 public class Sparrow extends Bird {

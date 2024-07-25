@@ -1,3 +1,5 @@
+package people;
+
 public class Human {
     private Name name;
     private int hight;

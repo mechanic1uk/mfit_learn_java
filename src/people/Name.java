@@ -1,3 +1,5 @@
+package people;
+
 public class Name {
     private String firstName = null; // Имя
     private String lastName = null; // Фамилия

@@ -1,3 +1,5 @@
+package geometric;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,11 +10,17 @@ public class Polyline {
 
     }
 
-    public Polyline(Point ... points){
+    public Polyline(Point... points){
         addPoint(points);
     }
+    public Polyline(List<Point> pointList){
+        for (Point x :pointList){
+            addPoint(x);
+        }
 
-    public void addPoint(Point ... points){
+    }
+
+    public void addPoint(Point... points){
         for (Point x: points){
             this.points.add(x);
 
@@ -45,7 +53,8 @@ public class Polyline {
         return points.getLast();
     }
 
-    public double distance (){
+    public double lenght(){
+        if (points.size() <= 1 ) return 0;
         double distance =0;
         for (int i =0; i < points.size()-1; i++){
             distance += Math.sqrt(Math.pow(points.get(i+1).getX() - points.get(i).getX(), 2) + Math.pow(points.get(i+1).getY()-points.get(i).getY(), 2));
@@ -55,6 +64,7 @@ public class Polyline {
 
     @Override
     public String toString() {
+
         StringBuilder sb = new StringBuilder("Линия [");
         for (int i = 0; i < points.size(); i++) {
             sb.append(points.get(i));
