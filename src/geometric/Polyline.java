@@ -29,6 +29,9 @@ public class Polyline {
     public void removePoint(Point point) {
         this.points.remove(point);
     }
+    public void removeLastPoint() {
+        this.points.remove(this.points.size()-1);
+    }
 
     public int getSize() {
         return points.size();
@@ -40,6 +43,9 @@ public class Polyline {
 
     public void addFirstPoint(Point point) {
         this.points.addFirst(point);
+    }
+    public void addLastPoint(Point point) {
+        this.points.addLast(point);
     }
 
     public void setPointCoordinates(int index, int x, int y) {
