@@ -1,3 +1,5 @@
+package Birds;
+
 import java.util.Random;
 
 public class Parrot extends Bird {
@@ -7,7 +9,7 @@ public class Parrot extends Bird {
         this.songText = songText;
     }
     @Override
-    public void isSing(){
+    public void toSing(){
         Random rnd = new Random();
         int length = rnd.nextInt(songText.length())+1;
         System.out.println();

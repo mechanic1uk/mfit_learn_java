@@ -1,8 +1,9 @@
-public class Bird {
+package Birds;
 
-    public void isSing (){
-        System.out.println("Птицы поют");
-    }
+public abstract class Bird {
+
+
+    public abstract void toSing ();
 }
 
 
