@@ -24,6 +24,8 @@ public class Triangle extends Figure{
         return (super.sides.get(0) + super.sides.get(1) + super.sides.get(2))/2;
     }
 
-
-
+    @Override
+    public int lenght() {
+       return super.lenght();
+    }
 }

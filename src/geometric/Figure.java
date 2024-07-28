@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class Figure {
+public abstract class Figure implements Calculatable{
     List<Point> points = new ArrayList<>();
     List<Integer> sides = new ArrayList<>();
     public abstract double calculateArea();
@@ -61,4 +61,15 @@ public abstract class Figure {
 
         return result.toString();
     }
+
+    @Override
+    public int lenght() {
+
+        int result=0;
+        for (int i: sides) result +=i;
+
+        return result;
+    }
 }
+
+

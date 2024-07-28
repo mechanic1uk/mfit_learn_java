@@ -1,7 +1,7 @@
 package geometric;
 import java.math.*;
 
-public class Square extends Figure{
+public class Square extends Rectangle implements Calculatable{
 
 
     public Square(Point leftPoint, int lenght) {
@@ -39,5 +39,8 @@ public class Square extends Figure{
     @Override
     public double calculateArea (){
         return  Math.pow(getLenght(),2);
+    }
+    public int lenght(){
+        return super.lenght();
     }
 }

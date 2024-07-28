@@ -27,6 +27,11 @@ public class Main {
         figures.add(circle);
         figures.add(rcl);
         figures.add(sqr);
+        System.out.println("Длинна треугольника: "+trl.lenght());
+        System.out.println("Длинна круга: " + circle.lenght());
+        System.out.println("Длинна прямоугольника: "+ rcl.lenght());
+        System.out.println("Длинна квадрата: "+ sqr.lenght());
+
 
         System.out.println("Общая площадь фигур составляет: " + calculateTotalArea(figures));
     }
