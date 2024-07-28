@@ -10,14 +10,15 @@ public class Triangle extends Figure{
         super(point);
     }
     public List<Integer> getLenght (){
-        if(super.points.size() == 3 ) {
+        if(super.points.size() == 3 && super.sides.isEmpty() ) {
             super.sides.add((int)super.getLenghtLine(super.points.get(0),super.points.get(1)));
             super.sides.add((int)super.getLenghtLine(super.points.get(1),super.points.get(2)));
             super.sides.add((int)super.getLenghtLine(super.points.get(2),super.points.get(0)));
         }
         return super.sides;
     }
-    public int getArea() {
+    @Override
+    public double calculateArea() {
         getLenght();
         if(super.sides.size() != 3) throw new IllegalArgumentException("Figure is not Triangle");
         return (super.sides.get(0) + super.sides.get(1) + super.sides.get(2))/2;

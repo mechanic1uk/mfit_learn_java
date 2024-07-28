@@ -10,7 +10,8 @@ public class Circle extends Figure{
     public Circle(Point point, int Radius) {
         super(point, Radius);
     }
-    public int getArea(){
-        return (int) ((2 *Math.PI)*pow(super.sides.getFirst(),2));
+    @Override
+    public double calculateArea(){
+        return  ((2 *Math.PI)*pow(super.sides.getFirst(),2));
     }
 }

@@ -36,7 +36,8 @@ public class Square extends Figure{
                 );
 
     }
-    public int getSquareArea (){
-        return (int) Math.pow(getLenght(),2);
+    @Override
+    public double calculateArea (){
+        return  Math.pow(getLenght(),2);
     }
 }

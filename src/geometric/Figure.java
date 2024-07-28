@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-abstract class Figure {
+public abstract class Figure {
     List<Point> points = new ArrayList<>();
     List<Integer> sides = new ArrayList<>();
+    public abstract double calculateArea();
 
     public Figure() {
     }
