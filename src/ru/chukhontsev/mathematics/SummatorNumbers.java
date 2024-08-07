@@ -1,4 +1,6 @@
 package ru.chukhontsev.mathematics;
+import static java.lang.Math.pow;
+import static java.lang.Double.parseDouble;
 
 public class SummatorNumbers implements NumberSummable {
 
@@ -11,4 +13,10 @@ public class SummatorNumbers implements NumberSummable {
         return sum;
     }
 
- }
+    @Override
+    public double power(String x, String y) {
+        return pow(parseDouble(x),parseDouble(y) );
+    }
+
+
+}

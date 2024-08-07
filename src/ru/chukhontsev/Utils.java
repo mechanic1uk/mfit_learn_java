@@ -154,7 +154,7 @@ public class Utils {
 
         return result;
     }
-    public static int pow(int x, int y){
+    public static int powd(int x, int y){
         if (x==0) return 0;
         else if (y==0) return 1;
         else {
