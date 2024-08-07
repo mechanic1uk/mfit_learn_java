@@ -6,13 +6,13 @@ public class Employee {
     private Department department;
 
 
-    Employee(String name) {
+    public Employee(String name) {
         this.name = new Name(name);
     }
     Employee(String name, Department department) {
         this(name);
-        this.department = department;
-        this.department.addEmployee(this);
+        this.setDepartment(department);
+
     }
 
     public String getName() {
@@ -24,13 +24,12 @@ public class Employee {
     }
 
     public void setDepartment(Department department) {
-     if (department == this.department) return;
-     if(department != null && this.department.getBoss() == this ) {
-         this.department.setBoss(null);
-         this.department.removeEmployee(this);
-     }
-     this.department = department;
-     this.department.addEmployee(this);
+        if (this.department == department) return;
+        if (this.department == null) this.department = department;
+        if (this == this.department.boss && this.department != null) this.department.boss = null;
+        if (this.department != null) this.department.employees.remove(this);
+        if (department != null) this.department.addEmployee(this);
+
     }
 
     public Department getDepartment() {
@@ -40,12 +39,12 @@ public class Employee {
     @Override
 
     public String toString() {
-
-        if (department.getBoss() == this) {
+        if (department == null) return "У сотрудника нет департамента";
+        if (department.boss == this) {
             return name +" является начальником отдела " + department.getNameDepartment();
         }
         else {
-            return name + " является сотрудником департамента "+ department.getNameDepartment() + "  "+ department.toString();
+            return name + " является сотрудником департамента "+ department.nameDepartment + "  "+ department.toString();
         }
 
     }
