@@ -53,8 +53,8 @@ public class Department {
 
     @Override
     public String toString() {
-        return
-                " " + boss;
+        if (boss == null) return "У департамента " + nameDepartment+" нет начальника";
+        return " " + boss;
 
     }
 }

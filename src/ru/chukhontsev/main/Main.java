@@ -22,9 +22,11 @@ public class Main {
             System.out.println(new ru.chukhontsev.geometric.Point(1,2));
             System.out.println(new Point());
             Department dep = new Department("OMT");
+            Department dep1 = new Department("IT");
             Employee p1 = new Employee("Max");
             Employee p2 = new Employee("Pedro");
             Employee p3 = new Employee("Alvares");
+            p3.setDepartment(dep1);
             dep.addEmployee(p1);
             dep.addEmployee(p2);
             dep.addEmployee(p3);

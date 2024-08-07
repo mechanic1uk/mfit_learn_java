@@ -28,7 +28,7 @@ public class Employee {
         if (this.department == null) this.department = department;
         if (this == this.department.boss && this.department != null) this.department.boss = null;
         if (this.department != null) this.department.employees.remove(this);
-        if (department != null) this.department.addEmployee(this);
+        this.department.addEmployee(this);
 
     }
 
