@@ -3,8 +3,9 @@ package ru.chukhontsev.main;
 
 import ru.chukhontsev.mathematics.Fraction;
 import ru.chukhontsev.mathematics.SummatorNumbers;
-
+import java.awt.Point;
 import java.math.BigInteger;
+
 
 
 public class Main {
@@ -17,7 +18,8 @@ public class Main {
             Double res = sm.sumNumbers(7, f, 3.21, bigInteger);
             System.out.println(res);
             System.out.println(sm.power(args[0], args[1]));
-
+            System.out.println(new ru.chukhontsev.geometric.Point(1,2));
+            System.out.println(new Point());
         }
 
 
