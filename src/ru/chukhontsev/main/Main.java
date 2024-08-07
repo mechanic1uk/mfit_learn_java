@@ -4,7 +4,6 @@ import ru.chukhontsev.mathematics.Fraction;
 import ru.chukhontsev.mathematics.SummatorNumbers;
 import ru.chukhontsev.people.Department;
 import ru.chukhontsev.people.Employee;
-import ru.chukhontsev.people.Employee;
 import java.awt.Point;
 import java.math.BigInteger;
 
