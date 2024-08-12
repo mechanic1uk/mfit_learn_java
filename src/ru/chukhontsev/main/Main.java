@@ -15,27 +15,14 @@ public class Main {
 
             BigInteger bigInteger = new BigInteger("12345678912345678912");
             Fraction f = new Fraction(11, 3);
-            SummatorNumbers sm = new SummatorNumbers();
-            Double res = sm.sumNumbers(7, f, 3.21, bigInteger);
-            System.out.println(res);
-            System.out.println(sm.power(args[0], args[1]));
-            System.out.println(new ru.chukhontsev.geometric.Point(1,2));
-            System.out.println(new Point());
-            Department dep = new Department("OMT");
-            Department dep1 = new Department("IT");
-            Employee p1 = new Employee("Max");
-            Employee p2 = new Employee("Pedro");
-            Employee p3 = new Employee("Alvares");
-            p3.setDepartment(dep1);
-            dep.addEmployee(p1);
-            dep.addEmployee(p2);
-            dep.addEmployee(p3);
-            dep.setBoss(p2);
-            dep.setBoss(p1);
-            System.out.println(dep);
-            System.out.println(p1);
-            System.out.println(p2);
-            System.out.println(p3);
+            Fraction f2 = new Fraction(21, 3);
+            Fraction f3 = f;
+            System.out.println(f.equals(f2));
+            System.out.println();
+            System.out.println(f.equals(f3));
+            System.out.println();
+            System.out.println(f3.equals(f2));
+
 
 
 
