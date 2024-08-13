@@ -2,6 +2,7 @@ package ru.chukhontsev.main;
 
 import ru.chukhontsev.geometric.Line;
 import ru.chukhontsev.geometric.Point;
+import ru.chukhontsev.geometric.Polyline;
 import ru.chukhontsev.mathematics.Fraction;
 import ru.chukhontsev.mathematics.SummatorNumbers;
 import ru.chukhontsev.people.Department;
@@ -35,6 +36,15 @@ public class Main {
             System.out.println(l1.equals(l2));
             l2 = new Line(p1,new Point(2,3));
             System.out.println(l1.equals(l2));
+            Point p3 = new Point(9,12);
+            Point p4 = new Point(32,2);
+            Polyline pl1 = new Polyline(p1,p2,p3,p4);
+            Polyline pl2 = new Polyline(p2,p3,p4);
+            Polyline pl3 = new Polyline(p1,p2,p3,p4);
+            System.out.println();
+            System.out.println(pl1.equals(pl2));
+            System.out.println(pl1.equals(pl3));
+
 
 
 

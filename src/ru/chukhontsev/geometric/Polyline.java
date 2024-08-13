@@ -2,8 +2,9 @@ package ru.chukhontsev.geometric;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class Polyline {
+public class Polyline extends Object{
     private List<Point> points  = new ArrayList<>();
 
     public Polyline(){
@@ -66,6 +67,19 @@ public class Polyline {
             distance += Math.sqrt(Math.pow(points.get(i+1).getX() - points.get(i).getX(), 2) + Math.pow(points.get(i+1).getY()-points.get(i).getY(), 2));
         }
         return distance;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Polyline polyline = (Polyline) o;
+        return Objects.equals(points, polyline.points);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 
     @Override
