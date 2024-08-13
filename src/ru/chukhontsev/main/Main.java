@@ -1,5 +1,6 @@
 package ru.chukhontsev.main;
 
+import ru.chukhontsev.geodesic.City;
 import ru.chukhontsev.geometric.Line;
 import ru.chukhontsev.geometric.Point;
 import ru.chukhontsev.geometric.Polyline;
@@ -9,41 +10,42 @@ import ru.chukhontsev.people.Department;
 import ru.chukhontsev.people.Employee;
 
 import java.math.BigInteger;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Main {
     public static void main(String[] args) {
 
 
-            BigInteger bigInteger = new BigInteger("12345678912345678912");
-            Fraction f = new Fraction(11, 3);
-            Fraction f2 = new Fraction(21, 3);
-            Fraction f3 = f;
-            System.out.println(f.equals(f2));
-            System.out.println();
-            System.out.println(f.equals(f3));
-            System.out.println();
-            System.out.println(f3.equals(f2));
-            System.out.println();
-            Point p1 = new Point(12,22);
-            Point p2 = new Point(12,22);
-            System.out.print("Проверка на равенство точек" + p1.toString() +" "+p2.toString()+ "  ");
-            System.out.println(p1.equals(p2));
-            System.out.println();
-            Line l1 = new Line(p1,p2);
-            Line l2 = new Line(p1,p2);
-            System.out.println(l1.equals(l2));
-            l2 = new Line(p1,new Point(2,3));
-            System.out.println(l1.equals(l2));
-            Point p3 = new Point(9,12);
-            Point p4 = new Point(32,2);
-            Polyline pl1 = new Polyline(p1,p2,p3,p4);
-            Polyline pl2 = new Polyline(p2,p3,p4);
-            Polyline pl3 = new Polyline(p1,p2,p3,p4);
-            System.out.println();
-            System.out.println(pl1.equals(pl2));
-            System.out.println(pl1.equals(pl3));
+            City city1 = new City("Moskow");
+            City city2 = new City("St.Pitersburg");
+            City city3 = new City("Ekaterinburg");
+            City city4 = new City("Ekaterinburg");
+
+            HashMap<City,Integer> ways = new HashMap<>();
+            HashMap<City,Integer> ways2 = new HashMap<>();
+
+            ways.put(city2,1);
+            ways.put(city3,1);
+            ways.put(city4,1);
+            ways2.put(city1,1);
+            ways2.put(city2,1);
+            ways2.put(city4,1);
+
+            city1.addPath(city2,1);
+            city1.addPath(city3,1);
+            city1.addPath(city4,1);
+            City city5 = new City("Ekaterinburg", ways);
+            City city6 = new City("Ekaterinburg", ways2);
+
+            System.out.println(city1.equals(city5));
+            System.out.println(city1.equals(city6));
+
+
+
+
+
 
 
 
