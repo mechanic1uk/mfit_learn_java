@@ -1,6 +1,6 @@
 package ru.chukhontsev.geometric;
 
-public class Point {
+public class Point extends Object{
     private int x;
     private int y;
 
@@ -31,5 +31,18 @@ public class Point {
     @Override
     public String toString() {
         return "{" + x + ";" + y + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return this.x == point.x && this.y == point.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 }

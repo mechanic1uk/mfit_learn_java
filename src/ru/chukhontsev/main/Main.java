@@ -1,17 +1,18 @@
 package ru.chukhontsev.main;
 
+import ru.chukhontsev.geometric.Point;
 import ru.chukhontsev.mathematics.Fraction;
 import ru.chukhontsev.mathematics.SummatorNumbers;
 import ru.chukhontsev.people.Department;
 import ru.chukhontsev.people.Employee;
-import java.awt.Point;
+
 import java.math.BigInteger;
 
 
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length < 2) throw new IllegalArgumentException("Необходимо передать два числа в аргументах командной строки");
+
 
             BigInteger bigInteger = new BigInteger("12345678912345678912");
             Fraction f = new Fraction(11, 3);
@@ -22,6 +23,12 @@ public class Main {
             System.out.println(f.equals(f3));
             System.out.println();
             System.out.println(f3.equals(f2));
+            System.out.println();
+            Point p1 = new Point(12,22);
+            Point p2 = new Point(12,22);
+            System.out.print("Проверка на равенство точек" + p1.toString() +" "+p2.toString()+ "  ");
+            System.out.println(p1.equals(p2));
+
 
 
 
