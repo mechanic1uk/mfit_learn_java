@@ -2,7 +2,7 @@ package ru.chukhontsev.geometric;
 
 import java.util.Objects;
 
-public class Line extends Object{
+public class Line extends Object implements Cloneable{
 
     private Point startPoint;
     private Point endPoint;
@@ -51,6 +51,18 @@ public class Line extends Object{
 
     @Override
     public String toString(){
-        return "Линия от " + startPoint + " до " + endPoint;
+        return this.getClass().getName() + " Линия от " + startPoint + " до " + endPoint;
+    }
+
+    @Override
+    public Line clone() {
+        try {
+            Line res = new Line(((Line) super.clone()).startPoint,((Line) super.clone()).endPoint );
+
+            return res;
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

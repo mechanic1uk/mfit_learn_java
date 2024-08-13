@@ -1,6 +1,6 @@
 package ru.chukhontsev.mathematics;
 
-public final class Fraction extends Number{
+public final class Fraction extends Number implements Cloneable{
     private final int numerator;
     private final int denominator;
 
@@ -37,7 +37,7 @@ public final class Fraction extends Number{
 
     @Override
     public String toString() {
-        return numerator + "/" + denominator;
+        return this.getClass().getName() +"  "+numerator + "/" + denominator;
     }
 
     @Override
@@ -69,7 +69,11 @@ public final class Fraction extends Number{
     }
 
     @Override
-    public int hashCode() {
-        return 0;
+    public Fraction clone() {
+        try {
+            return (Fraction) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

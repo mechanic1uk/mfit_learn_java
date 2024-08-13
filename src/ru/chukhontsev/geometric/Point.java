@@ -1,6 +1,6 @@
 package ru.chukhontsev.geometric;
 
-public class Point extends Object{
+public class Point extends Object implements Cloneable{
     private int x;
     private int y;
 
@@ -30,7 +30,7 @@ public class Point extends Object{
 
     @Override
     public String toString() {
-        return "{" + x + ";" + y + "}";
+        return this.getClass().getName()+"  {" + x + ";" + y + "}";
     }
 
     @Override
@@ -42,7 +42,11 @@ public class Point extends Object{
     }
 
     @Override
-    public int hashCode() {
-        return 0;
+    public Point clone()  {
+        try {
+            return (Point) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

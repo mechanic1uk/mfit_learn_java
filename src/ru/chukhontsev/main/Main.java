@@ -18,41 +18,29 @@ public class Main {
     public static void main(String[] args) {
 
 
-            City city1 = new City("Moskow");
-            City city2 = new City("St.Pitersburg");
-            City city3 = new City("Ekaterinburg");
-            City city4 = new City("Ekaterinburg");
+        Fraction f = new Fraction(1, 2);
+        System.out.println(f);
 
-            HashMap<City,Integer> ways = new HashMap<>();
-            HashMap<City,Integer> ways2 = new HashMap<>();
+        Fraction f2 = (Fraction) f.clone();
+        System.out.println(f2);
+        System.out.println(f2.equals(f));
+        System.out.println(f.equals(f2));
 
-            ways.put(city2,1);
-            ways.put(city3,1);
-            ways.put(city4,1);
-            ways2.put(city1,1);
-            ways2.put(city2,1);
-            ways2.put(city4,1);
+        Point p1 = new Point(2, 5);
+        Point p2 = p1.clone();
 
-            city1.addPath(city2,1);
-            city1.addPath(city3,1);
-            city1.addPath(city4,1);
-            City city5 = new City("Ekaterinburg", ways);
-            City city6 = new City("Ekaterinburg", ways2);
+        System.out.println(p1);
+        System.out.println(p1.equals(p2));
+        System.out.println(p2);
+        System.out.println(p2.equals(p1));
 
-            System.out.println(city1.equals(city5));
-            System.out.println(city1.equals(city6));
-
+        Line l1 = new Line(p1, p2);
+        Line l2 = l1.clone();
+        System.out.println(l1);
+        System.out.println(l2);
+        System.out.println(l1.equals(l2));
+        System.out.println(l2.equals(l1));
 
 
-
-
-
-
-
-
-
-
-        }
-
-
+    }
 }
