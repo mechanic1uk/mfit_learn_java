@@ -1,23 +1,15 @@
 package ru.chukhontsev.main;
 
 import ru.chukhontsev.generic.Storage;
+import ru.chukhontsev.people.Student;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        Storage<Integer> StorageNull = new Storage<>(null, 0);
-        System.out.println("Полученное значение: " + StorageNull.getObject()); // Должно вернуть 0
-
-        Storage <Integer> Storage99 = new Storage<>(99, -1);
-        System.out.println("Полученное значение: " + Storage99.getObject()); // Должно вернуть 99
-
-        Storage <String> StorageNullStr = new Storage<>(null, "default");
-        System.out.println("Полученное значение: " + StorageNullStr.getObject()); // Должно вернуть "default"
-
-        Storage <String> StorageHello = new Storage<>("hello", "hello world");
-        System.out.println("Полученное значение: " + StorageHello.getObject()); // Должно вернуть "hello"
-
+        Student first = new Student("Ivan", 5, 5, 5, 5, 3);
+        Student second= new Student("Petya", 5, 5, 3, 3, 3);
+        System.out.println(first.compare(second));
     }
 
 

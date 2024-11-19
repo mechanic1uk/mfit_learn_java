@@ -1,9 +1,11 @@
 package ru.chukhontsev.people;
 
+import ru.chukhontsev.generic.Comparable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String name;
     private List <Integer> assessment = new ArrayList<>();
     public Student(String name, int ...assessments){
@@ -79,6 +81,13 @@ public class Student {
 
         return  name + ": " + assessment;
     }
+
+    @Override
+    public int compare(Student other) {
+        return (int) (this.averageAssessment() - other.averageAssessment());
+    }
+
+
 }
 
 
