@@ -2,38 +2,47 @@ package ru.chukhontsev.geometric;
 
 import java.util.Objects;
 
-public class Line extends Object implements Cloneable{
+public class Line <T extends Point> implements Cloneable{
 
-    private Point startPoint;
-    private Point endPoint;
 
-    public Line(Point startPoint, Point endPoint){
-        this.startPoint = new Point(startPoint.getX(),startPoint.getY());
-        this.endPoint = new Point(endPoint.getX(), endPoint.getY());
-    }
-    public Line (int startX, int startY, int endX, int endY){
-        this.startPoint = new Point(startX, startY);
-        this.endPoint = new Point(endX, endY);
-    }
+    private T startPoint;
+    private T endPoint;
 
-    public void setStartPoint(Point startPoint) {
-        this.startPoint = new Point(startPoint.getX(),startPoint.getY());
+
+    private Line(T startPoint, T endPoint){
+        if (startPoint == null || endPoint == null) throw new IllegalArgumentException("Одна из точек не содержит значения");
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
     }
 
-    public void setEndPoint(Point endPoint) {
-        this.endPoint = new Point(endPoint.getX(), endPoint.getY());
+    private static <V extends Point> Line <V> createof(V startPoint, V endPoint){
+        return new Line<>(startPoint, endPoint);
+    }
+    private static  Line <Point> createof(int startX, int startY, int endX, int endY){
+        Point sPoint = new Point(startX,startY);
+        Point ePoint = new Point(endX,endY);
+        return new Line<>(sPoint, ePoint);
+
     }
 
-    public Point getStartPoint() {
-        return new Point(this.startPoint.getX(), this.startPoint.getY());
+    public void setStartPoint(T startPoint) {
+        this.startPoint = (T) startPoint.clone();
     }
 
-    public Point getEndPoint() {
-        return new Point(this.endPoint.getX(), this.endPoint.getY());
+    public void setEndPoint(T endPoint) {
+        this.endPoint =  (T) endPoint.clone();
     }
 
-    public double lenght (){
-        return Math.sqrt(Math.pow(endPoint.getX() - startPoint.getX(), 2) + Math.pow(endPoint.getY()-startPoint.getY(), 2));
+    public T getStartPoint() {
+        return startPoint;
+    }
+
+    public T getEndPoint() {
+        return endPoint;
+    }
+
+    public int lenght(){
+        return (int) startPoint.length(endPoint);
     }
 
     @Override
@@ -45,8 +54,8 @@ public class Line extends Object implements Cloneable{
     }
 
     @Override
-    public int hashCode() {
-        return 0;
+    public final int hashCode() {
+        return Objects.hash(startPoint,endPoint);
     }
 
     @Override
@@ -55,7 +64,7 @@ public class Line extends Object implements Cloneable{
     }
 
     @Override
-    public Line clone() {
+    public Line<T> clone() {
         try {
             Line res = new Line(((Line) super.clone()).startPoint,((Line) super.clone()).endPoint );
 

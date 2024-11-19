@@ -49,4 +49,7 @@ public class Point extends Object implements Cloneable{
             throw new RuntimeException(e);
         }
     }
+    public double length (Point targetPoint){
+        return Math.sqrt(Math.pow(this.getX() - targetPoint.getX(), 2) + Math.pow(this.getY()-targetPoint.getY(), 2));
+    }
 }

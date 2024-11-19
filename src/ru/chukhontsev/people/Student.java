@@ -84,7 +84,7 @@ public class Student implements Comparable<Student> {
 
     @Override
     public int compare(Student other) {
-        return (int) (this.averageAssessment() - other.averageAssessment());
+        return (int) Math.round(this.averageAssessment() - other.averageAssessment());
     }
 
 
