@@ -1,34 +1,23 @@
 package ru.chukhontsev.main;
 
-import ru.chukhontsev.boxes.Box;
-import ru.chukhontsev.geodesic.City;
-import ru.chukhontsev.geometric.Line;
-import ru.chukhontsev.geometric.Point;
-import ru.chukhontsev.geometric.Polyline;
-import ru.chukhontsev.mathematics.Fraction;
-import ru.chukhontsev.mathematics.SummatorNumbers;
-import ru.chukhontsev.people.Department;
-import ru.chukhontsev.people.Employee;
-
-import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.Map;
+import ru.chukhontsev.generic.Storage;
 
 
 public class Main {
     public static void main(String[] args) {
 
+        Storage<Integer> StorageNull = new Storage<>(null, 0);
+        System.out.println("Полученное значение: " + StorageNull.getObject()); // Должно вернуть 0
 
-        Box<Integer> integerBox = new Box<>();
-        // Кладем число 3 в коробку
-        integerBox.put(3);
+        Storage <Integer> Storage99 = new Storage<>(99, -1);
+        System.out.println("Полученное значение: " + Storage99.getObject()); // Должно вернуть 99
 
-        // Извлекаем значение из коробки и выводим его на экран
-        Integer value = integerBox.get();
-        System.out.println("Извлеченное значение: " + value);
+        Storage <String> StorageNullStr = new Storage<>(null, "default");
+        System.out.println("Полученное значение: " + StorageNullStr.getObject()); // Должно вернуть "default"
 
-        // Проверяем, пуста ли коробка после извлечения
-        System.out.println("Коробка пуста? " + integerBox.isEmpty());
+        Storage <String> StorageHello = new Storage<>("hello", "hello world");
+        System.out.println("Полученное значение: " + StorageHello.getObject()); // Должно вернуть "hello"
+
     }
 
 

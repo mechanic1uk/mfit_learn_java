@@ -1,4 +1,4 @@
-package ru.chukhontsev.boxes;
+package ru.chukhontsev.generic;
 
 // Обобщенный класс Box
 public class Box <T> {
