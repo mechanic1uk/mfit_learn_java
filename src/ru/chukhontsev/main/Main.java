@@ -1,5 +1,6 @@
 package ru.chukhontsev.main;
 
+import ru.chukhontsev.boxes.Box;
 import ru.chukhontsev.geodesic.City;
 import ru.chukhontsev.geometric.Line;
 import ru.chukhontsev.geometric.Point;
@@ -18,29 +19,17 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Fraction f = new Fraction(1, 2);
-        System.out.println(f);
+        Box<Integer> integerBox = new Box<>();
+        // Кладем число 3 в коробку
+        integerBox.put(3);
 
-        Fraction f2 = (Fraction) f.clone();
-        System.out.println(f2);
-        System.out.println(f2.equals(f));
-        System.out.println(f.equals(f2));
+        // Извлекаем значение из коробки и выводим его на экран
+        Integer value = integerBox.get();
+        System.out.println("Извлеченное значение: " + value);
 
-        Point p1 = new Point(2, 5);
-        Point p2 = p1.clone();
-
-        System.out.println(p1);
-        System.out.println(p1.equals(p2));
-        System.out.println(p2);
-        System.out.println(p2.equals(p1));
-
-        Line l1 = new Line(p1, p2);
-        Line l2 = l1.clone();
-        System.out.println(l1);
-        System.out.println(l2);
-        System.out.println(l1.equals(l2));
-        System.out.println(l2.equals(l1));
-
-
+        // Проверяем, пуста ли коробка после извлечения
+        System.out.println("Коробка пуста? " + integerBox.isEmpty());
     }
+
+
 }
