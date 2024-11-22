@@ -9,7 +9,7 @@ public class Line <T extends Point> implements Cloneable{
     private T endPoint;
 
 
-    private Line(T startPoint, T endPoint){
+    public Line(T startPoint, T endPoint){
         if (startPoint == null || endPoint == null) throw new IllegalArgumentException("Одна из точек не содержит значения");
         this.startPoint = startPoint;
         this.endPoint = endPoint;
@@ -44,6 +44,7 @@ public class Line <T extends Point> implements Cloneable{
     public int lenght(){
         return (int) startPoint.length(endPoint);
     }
+
 
     @Override
     public boolean equals(Object o) {

@@ -28,6 +28,7 @@ public class Point extends Object implements Cloneable{
         this.y = y;
     }
 
+
     @Override
     public String toString() {
         return this.getClass().getName()+"  {" + x + ";" + y + "}";
