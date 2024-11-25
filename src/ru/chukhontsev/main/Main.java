@@ -5,6 +5,8 @@ import ru.chukhontsev.geometric.Methods;
 import ru.chukhontsev.geometric.Point;
 import ru.chukhontsev.geometric.Point3D;
 
+import java.util.ArrayList;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -24,10 +26,13 @@ public class Main {
 
         Methods m = new Methods();
         m.setPoint3DBox(box6);
+        ArrayList<Integer> list = new ArrayList<>();
+        m.loadList(list);
 
 
         System.out.println(m.maxValue(box1,box2,box3,box4,box5));
         System.out.println(box6.get());
+        System.out.println(list);
 
 
 

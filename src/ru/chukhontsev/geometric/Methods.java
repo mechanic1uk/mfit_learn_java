@@ -2,6 +2,7 @@ package ru.chukhontsev.geometric;
 
 import ru.chukhontsev.generic.Box;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Methods {
@@ -21,5 +22,13 @@ public class Methods {
     }
     public static void setPoint3DBox ( Box <? super Point3D> box){
         box.put(new Point3D( new Random().nextInt(1, 10), new Random().nextInt(1, 10),new Random().nextInt(1, 10)));
+    }
+
+    public static void loadList (ArrayList<Integer> list){
+        if (list.isEmpty()){
+            for (int i = 1; i <= 100; i++){
+                list.add(i);
+            }
+        }
     }
 }
