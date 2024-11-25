@@ -1,5 +1,6 @@
 package ru.chukhontsev.main;
 
+import ru.chukhontsev.generic.Box;
 import ru.chukhontsev.geometric.Line;
 import ru.chukhontsev.geometric.Methods;
 import ru.chukhontsev.geometric.Point;
@@ -10,16 +11,22 @@ import ru.chukhontsev.people.Student;
 public class Main {
     public static void main(String[] args) {
 
-        Student first = new Student("Ivan", 5, 5, 5, 2, 2);
-        Student second= new Student("Petya", 5, 5, 3, 5, 5);
-        System.out.println(first.compare(second));
+        Box <Double>box1 = new Box<>();
 
-        Line<Point> l1 = new Line (new Point(1,2), new Point(4,5));
-        System.out.println(l1);
-        Methods moveLine = new Methods();
-        moveLine.move(l1);
-        System.out.println(l1);
+        Box <Integer>box2 = new Box<>();
+        Box <Long>box3 = new Box<>();
+        Box <Short>box4 = new Box<>();
+        Box <Float>box5 = new Box<>();
+        box1.put(10.0);
+        box2.put(120);
+        box3.put(127L);
+        box4.put((short) -555);
+        box5.put(25F);
 
+
+        Methods m = new Methods();
+
+        System.out.println(m.maxValue(box1,box2,box3,box4,box5));
 
 
     }
