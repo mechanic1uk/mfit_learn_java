@@ -23,4 +23,12 @@ public class Point3D extends Point implements Cloneable {
     public Point3D clone() {
         return new Point3D(super.getX(), super.getY(), z); // Предполагаем, что у Point2D есть getX() и getY()
     }
+
+
+    @Override
+    public String toString() {
+        return "Point3D { " + super.getX()+ "; " + super.getY() +
+                "; " + z +
+                "}";
+    }
 }

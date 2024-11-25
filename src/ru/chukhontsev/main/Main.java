@@ -1,11 +1,9 @@
 package ru.chukhontsev.main;
 
 import ru.chukhontsev.generic.Box;
-import ru.chukhontsev.geometric.Line;
 import ru.chukhontsev.geometric.Methods;
 import ru.chukhontsev.geometric.Point;
 import ru.chukhontsev.geometric.Point3D;
-import ru.chukhontsev.people.Student;
 
 
 public class Main {
@@ -22,11 +20,15 @@ public class Main {
         box3.put(127L);
         box4.put((short) -555);
         box5.put(25F);
-
+        Box <Point3D> box6 = new Box<>();
 
         Methods m = new Methods();
+        m.setPoint3DBox(box6);
+
 
         System.out.println(m.maxValue(box1,box2,box3,box4,box5));
+        System.out.println(box6.get());
+
 
 
     }
